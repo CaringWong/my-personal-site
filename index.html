@@ -19,43 +19,50 @@
       width: 100%;
       max-height: 800px;
       overflow: hidden;
+      margin-bottom: 40px; /* Add space below the banner */
     }
     .banner img {
       width: 100%;
       object-fit: cover;
     }
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 0px rgba(0,0,0,0);
-    }
-    h1, h2 {
+    header {
+      background-color: #fff; 
       color: #333;
-      font-size: 4em;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 40px; /* Add space below the header */
+    }
+    h1 {
+      color: #333;
+      font-size: 4em; /* Double the original size for header */
       margin: 0; 
       border: none;
       text-shadow: none;
       line-height: 1.4; /* Unified line height for headings */
     }
+    .intro h1 {
+      font-size: 2.5em; /* Slightly smaller than main header */
+      margin: 0; 
+      line-height: 1.4; /* Unified line height for section headings */
+    }
+    .contact h2 {
+      font-size: 2em; /* Smaller than intro h1 */
+      margin: 0; 
+      line-height: 1.4; /* Unified line height for section headings */
+    }
     .intro p, .contact p {
-      font-size: 1em; 
+      font-size: 1.5rem; /* Increased font size */
       margin: 0; 
       line-height: 1.6; /* Unified line height for paragraph text */
     }
-    .language-section {
-      margin: 20px 0;
-    }
     .language-section p {
-      font-size: 1em; 
+      font-size: 1.5rem; /* Increased font size */
       margin: 0; 
       line-height: 1.6; /* Unified line height for language section text */
     }
     .social-links {
       margin-top: 20px;
-      font-size: 1.1em;
+      font-size: 1.5rem; /* Increased font size */
       line-height: 1.6; /* Unified line height for social links */
     }
     .social-links a {
@@ -63,7 +70,16 @@
       text-decoration: none;
       font-weight: bold;
     }
+    footer {
+      background-color: #fff; 
+      color: #333;
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid #ddd; 
+      margin-top: 40px; /* Add space above the footer */
+    }
     footer p {
+      font-size: 1.5rem; /* Increased font size */
       margin: 0;
       line-height: 1.6; /* Unified line height for footer text */
     }
@@ -82,6 +98,7 @@
       <h1>CaringWong Illustration</h1>
     </div>
   </header>
+
   <div class="container">
     <section class="intro">
       <h1>About Me</h1>
