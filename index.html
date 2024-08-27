@@ -10,16 +10,20 @@
       font-family: Avenir, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
       background-color: #ffffff;
-      font-size: 12px;
-      line-height: 1.6; /* Unified line height for body text */
+      font-size: 12px; 
+      line-height: 1.6;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
     }
     .banner {
       width: 100%;
       max-height: 1000px;
       overflow: hidden;
-      margin-bottom: 20px; /* Add space below the banner */
+      margin-bottom: 20px;
     }
     .banner img {
       width: 100%;
@@ -28,67 +32,95 @@
     header {
       background-color: #fff; 
       color: #333;
-      padding: 1.2rem; /* Adjusted padding */
+      padding: 1.2rem;
       text-align: center;
-      margin-bottom: 40px; /* Add space below the header */
+      margin-bottom: 40px;
     }
     h1 {
       color: #333;
-      font-size: 4.5em; /* Main header size */
+      font-size: 4.5em;
       margin: 0; 
       border: none;
       text-shadow: none;
-      line-height: 1.4; /* Unified line height for headings */
+      line-height: 1.4;
     }
     .intro h1 {
-      font-size: 1.5rem; /* Larger font size for About Me title */
+      font-size: 1.5rem; 
       margin: 0; 
-      line-height: 1.4; /* Unified line height for section headings */
+      line-height: 1.4;
     }
     .contact h2 {
-      font-size: 1.5rem; /* Larger font size for Contact title */
+      font-size: 1.5rem; 
       margin: 0; 
-      line-height: 1.4; /* Unified line height for section headings */
+      line-height: 1.4;
     }
     .intro p, .contact p, .language-section p, .social-links {
-      font-size: 1.2rem; /* Adjusted font size */
+      font-size: 1.2rem; 
       margin: 0; 
-      line-height: 1.6; /* Unified line height for text */
+      line-height: 1.6;
     }
     .intro {
-      margin-bottom: 2rem; /* Adds space between About Me and Contact */
-    }
-    .contact {
-      margin-bottom: 10px; /* Reduce space below the contact section */
+      margin-bottom: 2rem;
     }
     .social-links {
-      margin-top: 10px; /* Reduce space above the social links */
-      font-size: 1.2rem; /* Adjusted font size */
+      margin-top: 20px;
+      font-size: 1.2rem; 
     }
     .social-links a {
       display: inline-block;
-      margin: 0 8px; /* Adjust spacing between icons */
+      margin: 0 10px;
     }
     .social-links img {
-      width: 25px; /* Adjust size of the icons */
+      width: 25px;
       height: 25px;
       transition: opacity 0.3s;
     }
     .social-links img:hover {
-      opacity: 0.7; /* Hover effect */
+      opacity: 0.7;
     }
     footer {
       background-color: #fff; 
       color: #333;
-      padding: 1.2rem; /* Adjusted padding */
+      padding: 1.2rem;
       text-align: center;
       border-top: 1px solid #ddd; 
-      margin-top: 40px; /* Add space above the footer */
+      margin-top: 40px;
     }
     footer p {
-      font-size: 1.2rem; /* Adjusted font size */
+      font-size: 1.2rem;
       margin: 0;
-      line-height: 1.6; /* Unified line height for footer text */
+      line-height: 1.6;
+    }
+    .gallery {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 20px; /* Space between gallery and contact section */
+    }
+    .gallery img {
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .gallery-wrapper {
+      display: flex;
+      width: 300%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .gallery-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
     }
   </style>
 </head>
@@ -112,6 +144,17 @@
       <p>CaringWong is an illustrator and architect from China. After living and studying in Paris for several years, she is currently based in southern China. She has a passion for drawing the cosmos, landscapes, skies, cities, and her daydreams.</p>
     </section>
 
+    <!-- Gallery Section -->
+    <div class="gallery">
+      <div class="gallery-wrapper">
+        <img src="https://via.placeholder.com/800x600?text=Page+1" alt="Page 1">
+        <img src="https://via.placeholder.com/800x600?text=Page+2" alt="Page 2">
+        <img src="https://via.placeholder.com/800x600?text=Page+3" alt="Page 3">
+      </div>
+      <button class="gallery-button prev">Previous</button>
+      <button class="gallery-button next">Next</button>
+    </div>
+
     <section class="contact">
       <h2>Contact</h2>
       <p>Email: caringempire@gmail.com</p>
@@ -134,10 +177,31 @@
       </div>
     </section>
   </div>
-  
+
   <footer>
     <p>&copy; 2024 CaringWong. All rights reserved.</p>
   </footer>
+
+  <script>
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const galleryWrapper = document.querySelector('.gallery-wrapper');
+    let index = 0;
+
+    function updateGallery() {
+      galleryWrapper.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : 2;
+      updateGallery();
+    });
+
+    nextButton.addEventListener('click', () => {
+      index = (index < 2) ? index + 1 : 0;
+      updateGallery();
+    });
+  </script>
 
 </body>
 </html>
