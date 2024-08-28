@@ -88,17 +88,23 @@
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px; /* Space between images */
+      gap: 20px; /* Space between images */
       margin-bottom: 20px; /* Space between gallery and contact section */
     }
+    .gallery a {
+      display: block;
+      flex: 1 1 auto;
+      height: 310px; /* Adjust the height as needed */
+      overflow: hidden;
+    }
     .gallery img {
-      width: calc(25% - 10px); /* 4 images per row with space */
-      height: auto;
-      object-fit: cover;
+      width: auto; /* Maintain aspect ratio */
+      height: 100%; /* Set height to match container */
+      object-fit: cover; /* Ensure image covers the container */
     }
     .nav-links {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .nav-links a {
       display: inline-block;
@@ -129,24 +135,43 @@
   </header>
 
   <div class="container">
-    <!-- Navigation Links -->
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#store">Store</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <!-- Navigation Links -->
+<div class="nav-links">
+  <a href="#about">About</a>
+  <a href="#illustration">Illustration</a>
+  <a href="#products">Products</a>
+  <a href="#publications">Publications</a>
+  <a href="#store">Store</a>
+  <a href="#contact">Contact</a>
+</div>
 
     <!-- Gallery Section -->
     <div class="gallery">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+1" alt="Artwork 1">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+2" alt="Artwork 2">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+3" alt="Artwork 3">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+4" alt="Artwork 4">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+5" alt="Artwork 5">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+6" alt="Artwork 6">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+7" alt="Artwork 7">
-      <img src="https://via.placeholder.com/300x200?text=Artwork+8" alt="Artwork 8">
+       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/07-%E8%B8%B1%E6%AD%A5.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/07-%E8%B8%B1%E6%AD%A5.jpg" alt="Artwork 4">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/20230310-Cat's%20Rose-final%EF%BC%8DCaringWong-preview.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/20230310-Cat's%20Rose-final%EF%BC%8DCaringWong-preview.jpg" alt="Artwork 6">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/08-%E7%81%AF%E5%A1%94II.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/08-%E7%81%AF%E5%A1%94II.jpg" alt="Artwork 1">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/05-20230721-%E9%A5%B2%E6%B8%8AII.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/05-20230721-%E9%A5%B2%E6%B8%8AII.jpg" alt="Artwork 2">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/04-20230421-%E9%A5%B2%E6%B8%8A-%E9%A2%84%E8%A7%88.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/04-20230421-%E9%A5%B2%E6%B8%8A-%E9%A2%84%E8%A7%88.jpg" alt="Artwork 3">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11-Rue%20Saint-Dominique3%202.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11-Rue%20Saint-Dominique3%202.jpg" alt="Artwork 5">
+      </a>
+     
+      <a href="https://via.placeholder.com/300x200?text=Artwork+7" target="_blank">
+        <img src="https://via.placeholder.com/300x200?text=Artwork+7" alt="Artwork 7">
+      </a>
+      <a href="https://via.placeholder.com/300x200?text=Artwork+8" target="_blank">
+        <img src="https://via.placeholder.com/300x200?text=Artwork+8" alt="Artwork 8">
+      </a>
     </div>
 
     <!-- About Section -->
@@ -154,12 +179,23 @@
       <h1>About</h1>
       <p>CaringWong is an illustrator and architect from China. After living and studying in Paris for several years, she is currently based in southern China. She has a passion for drawing the cosmos, landscapes, skies, cities, and her daydreams.</p>
     </section>
-
-    <!-- Publications Section -->
+<!-- Illustration Section -->
+<section id="illustration" class="intro">
+  <h1>Illustration</h1>
+  <p>Details about illustrations will be listed here.</p>
+</section>
+    
+      <!-- Publications Section -->
     <section id="publications" class="intro">
       <h1>Publications</h1>
       <p>Details about publications will be listed here.</p>
     </section>
+
+<!-- Products Section -->
+<section id="products" class="intro">
+  <h1>Products</h1>
+  <p>Details about products will be listed here.</p>
+</section>
 
     <!-- Store Section -->
     <section id="store" class="intro">
@@ -167,7 +203,7 @@
       <p>Details about store and available artworks for purchase will be listed here.</p>
     </section>
 
-    <!-- Contact Section -->
+      <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Email: caringempire@gmail.com</p>
@@ -190,7 +226,8 @@
       </div>
     </section>
   </div>
-  
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 CaringWong. All rights reserved.</p>
   </footer>
