@@ -88,25 +88,92 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(5, 1fr); /* 5 columns layout */
-      gap: 10px; /* Space between images */
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
     }
     .gallery a {
       display: block;
       overflow: hidden;
       position: relative;
-      width: 100%; /* Ensure anchor fills the grid cell */
+      border-radius: 8px;
+      grid-column: span 1;
+      grid-row: span 1;
     }
     .gallery img {
-      width: 100%; /* Make sure the image fills the container */
-      height: auto; /* Maintain aspect ratio */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
-      object-fit: cover; /* Cover the container while maintaining aspect ratio */
-      border-radius: 8px;
     }
+    .gallery a:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery a:nth-child(2) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .gallery a:nth-child(3) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .gallery a:nth-child(4) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .gallery a:nth-child(5) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .gallery a:nth-child(6) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+   .gallery a:nth-child(7) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+       .gallery a:nth-child(8) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+          .gallery a:nth-child(11) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+              .gallery a:nth-child(12) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+                  .gallery a:nth-child(13) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+                     .gallery a:nth-child(14) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+                         .gallery a:nth-child(15) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+                             .gallery a:nth-child(16) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+                                 .gallery a:nth-child(17) {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+                                     .gallery a:nth-child(18) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    /* Add more specific styles for child elements if needed */
+    
     .nav-links {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
     .nav-links a {
       display: inline-block;
@@ -118,7 +185,7 @@
       transition: border-color 0.3s;
     }
     .nav-links a:hover {
-      border-bottom: 2px solid #333;
+      border-bottom: 10px solid #333;
     }
   </style>
 </head>
@@ -149,60 +216,65 @@
 
     <!-- Gallery Section -->
     <div class="gallery">
-       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RunningintheStorm.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RunningintheStorm.jpg" alt="RunningintheStorm.jpg">
 
       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" target="_blank">
         <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" alt="Pacing">
-        
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/LeaveMeAlone.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/LeaveMeAlone.jpg" alt="LeaveMeAlone">
-
-       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Landing.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Landing.jpg" alt="Landing">
-                
-        <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Houses on the Stopping Train.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Houses on the Stopping Train.jpg" alt="Houses on the Stopping Train">
-
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide II.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide II.jpg" alt="Glide II">
-        
-        <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide.jpg" alt="Glide">
-        
-       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Edge.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Edge.jpg" alt="Edge">
-         
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Cat'sRose.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Cat'sRose.jpg" alt="Cat'sRose">
-
-        <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/BurningClouds.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/BurningClouds.jpg" alt="BurningClouds">
-
-        <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Back Light.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Back Light.jpg" alt="Back Light">
-              
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/03.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/03.jpg" alt="02">
-      </a>
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/06.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/06.jpg" alt="攻略不下的星辰">
-      </a>
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/10.png" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/10.png" alt="Artwork 1">
-      </a>
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11.jpg" alt="Artwork 2">
-      </a>
-
-      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/12.jpg" target="_blank">
-        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/12.jpg" alt="Artwork 2">
       </a>
       
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Landing.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Landing.jpg" alt="Landing">
+      </a>
+          
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide II.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide II.jpg" alt="Glide II">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Glide.jpg" alt="Glide">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Edge.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Edge.jpg" alt="Edge">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Cat'sRose.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Cat'sRose.jpg" alt="Cat'sRose">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/BurningClouds.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/BurningClouds.jpg" alt="BurningClouds">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Back Light.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Back Light.jpg" alt="Back Light">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/03.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/03.jpg" alt="03">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/06.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/06.jpg" alt="06">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/10.png" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/10.png" alt="10">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11.jpg" alt="11">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/12.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/12.jpg" alt="12">
+      </a>
       <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/CokeEportesCommission02.jpg" target="_blank">
         <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/CokeEportesCommission02.jpg" alt="CokeEportesCommission">
       </a>
-      <!-- Add more images as needed -->
+         <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Slide.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Slide.jpg" alt="Slide">
+      </a>
+      <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Houses on the Stopping Train.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Houses on the Stopping Train.jpg" alt="Houses on the Stopping Train">
+      </a>
+            <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RunningintheStorm.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RunningintheStorm.jpg" alt="RunningintheStorm.jpg">
+      </a>
+            <a href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/LeaveMeAlone.jpg" target="_blank">
+        <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/LeaveMeAlone.jpg" alt="LeaveMeAlone">
+     </a>
+ 
+         
     </div>
 
     <!-- About Section -->
