@@ -208,6 +208,46 @@
     }
     .nav-links a:hover {
       border-bottom: 10px solid #333;
+          /* Responsive styles */
+    @media (max-width: 768px) {
+      h1 {
+        font-family: 'Andale Mono', monospace; /* 手机端使用 Andale Mono */
+        font-size: 1.8rem; /* Adjusted font size for smaller screens */
+      }
+      .intro h1, .contact h2 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+      }
+      .intro p, .contact p, .language-section p, .social-links {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+      }
+      .nav-links a {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+      }
+      .banner {
+        max-height: 400px; /* Reduced height for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-family: 'Andale Mono', monospace; /* 手机端使用 Andale Mono */
+        font-size: 1.6rem; /* Further adjusted font size for very small screens */
+      }
+      .intro h1, .contact h2 {
+        font-size: 1rem; /* Further adjusted font size for very small screens */
+      }
+      .intro p, .contact p, .language-section p, .social-links {
+        font-size: 0.8rem; /* Further adjusted font size for very small screens */
+      }
+      .nav-links a {
+        font-size: 0.8rem; /* Further adjusted font size for very small screens */
+      }
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Further adjusted grid for very small screens */
+      }
+      .banner {
+        max-height: 300px; /* Further reduced height for very small screens */
+      }
     }
   </style>
 </head>
