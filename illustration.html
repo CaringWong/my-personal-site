@@ -138,6 +138,54 @@
 
         showImage(currentIndex); // Initialize with the first image
     </script>
+  
+ <div style="height: 100px;"></div>
+  
+  <div class="container">
+        <div class="caption">Rue Saint-Dominique, Paris</div> <!-- 图片说明文字 -->
+        <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
+             <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" alt="Pacing">
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Chasing the Sea Sunrise.jpg" alt="Chasing the Sea Sunrise">
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RueSaint-Dominique.jpg" class="active" alt="Rue Saint-Dominique, Paris">
+            <img src="image3.jpg" alt="Image 3">
+            <!-- Add more images as needed -->
+            <div class="navigation">
+                <button id="prevBtn" class="prevBtn">❮</button>
+                <button id="nextBtn" class="nextBtn">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.image-slider img');
+        const captions = [
+            'Pacing',
+            'Chasing the Sea Sunrise',
+            'Rue Saint-Dominique, Paris',
+            // Add more captions as needed
+        ];
+        const captionElement = document.querySelector('.caption');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+            captionElement.textContent = captions[index]; // 更新说明文字
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        showImage(currentIndex); // Initialize with the first image
+    </script>
     
      <!-- Footer -->
   <footer>
