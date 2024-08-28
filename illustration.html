@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片翻页预览</title>
+    <style>
+        body {
+            font-family: Avenir, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px; /* 增大预览框宽度 */
+            margin: 50px auto;
+            position: relative;
+        }
+        .caption {
+            position: absolute;
+            top: -30px; /* 在预览框上方10px */
+            left: 50%;
+            transform: translateX(-50%); /* 居中对齐 */
+            color: gray; /* 文字颜色为灰色 */
+            font-size: 18px; /* 文字大小可以根据需求调整 */
+            padding: 0;
+            margin-bottom: 10px; /* 增加文字与图片的距离 */
+            z-index: 10; /* 确保文字在预览框上层 */
+        }
+        .image-slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 800px; /* 增大预览框高度 */
+        }
+        .image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 保持图片等比例缩放 */
+            display: none;
+            transition: opacity 0.5s ease;
+        }
+        .image-slider img.active {
+            display: block;
+        }
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10; /* 确保按钮在图片上层 */
+        }
+        .navigation .prevBtn {
+            left: 20px; /* 将按钮定位在图片左侧外面 */
+        }
+        .navigation .nextBtn {
+            right: 20px; /* 将按钮定位在图片右侧外面 */
+        }
+        /* 禁止图片拖拽 */
+        .image-slider img {
+            -webkit-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="caption">Rue Saint-Dominique, Paris</div> <!-- 图片说明文字 -->
+        <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11-Rue%20Saint-Dominique3%202.jpg" class="active" alt="Rue Saint-Dominique, Paris">
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/05-20230721-%E9%A5%B2%E6%B8%8AII.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <!-- Add more images as needed -->
+            <div class="navigation">
+                <button id="prevBtn" class="prevBtn">❮</button>
+                <button id="nextBtn" class="nextBtn">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.image-slider img');
+        const captions = [
+            'Rue Saint-Dominique, Paris',
+            'Book Cover <饲渊 II>',
+            '这是第三张图片的说明文字。',
+            // Add more captions as needed
+        ];
+        const captionElement = document.querySelector('.caption');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
+            captionElement.textContent = captions[index]; // 更新说明文字
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        showImage(currentIndex); // Initialize with the first image
+    </script>
+</body>
+</html>
