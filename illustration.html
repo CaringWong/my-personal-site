@@ -80,11 +80,13 @@
     </style>
 </head>
 <body>
+     <div style="height: 100px;"></div>
     <div class="container">
         <div class="caption">Rue Saint-Dominique, Paris</div> <!-- 图片说明文字 -->
         <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/11-Rue%20Saint-Dominique3%202.jpg" class="active" alt="Rue Saint-Dominique, Paris">
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/05-20230721-%E9%A5%B2%E6%B8%8AII.jpg" alt="Image 2">
+             <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" alt="Pacing">
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Chasing the Sea Sunrise.jpg" alt="Chasing the Sea Sunrise">
+            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RueSaint-Dominique.jpg" class="active" alt="Rue Saint-Dominique, Paris">
             <img src="image3.jpg" alt="Image 3">
             <!-- Add more images as needed -->
             <div class="navigation">
@@ -97,9 +99,9 @@
     <script>
         const images = document.querySelectorAll('.image-slider img');
         const captions = [
+            'Pacing',
+            'Chasing the Sea Sunrise',
             'Rue Saint-Dominique, Paris',
-            'Book Cover <饲渊 II>',
-            '这是第三张图片的说明文字。',
             // Add more captions as needed
         ];
         const captionElement = document.querySelector('.caption');
@@ -124,5 +126,11 @@
 
         showImage(currentIndex); // Initialize with the first image
     </script>
+
+     <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CaringWong. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
