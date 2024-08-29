@@ -208,7 +208,9 @@
     }
     .nav-links a:hover {
       border-bottom: 10px solid #333;
-        /* Responsive styles */
+
+      
+            /* Add media queries for responsive design */
     @media (max-width: 768px) {
       body {
         font-family: 'Andale Mono', monospace; /* 手机端使用 Andale Mono */
@@ -248,6 +250,7 @@
       }
       .gallery {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Further adjusted grid for very small screens */
+        gap: 5px; /* Reduce gap for smaller screens */
       }
       .banner {
         max-height: 300px; /* Further reduced height for very small screens */
