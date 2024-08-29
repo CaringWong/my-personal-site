@@ -216,50 +216,36 @@
       @media (max-width: 768px) {
       
           body {
-      font-family: Andale Mono, sans-serif;/* 手机端使用 Andale Mono */
-      }
-      h1 {
-        font-size: 1.8rem; /* Adjusted font size for smaller screens */
-      }
-      .intro h1, .contact h2 {
-        font-size: 1rem; /* Adjusted font size for smaller screens */
-      }
-      .intro p, .contact p, .language-section p, .social-links {
-        font-size: 0.7rem; /* Adjusted font size for smaller screens */
-      }
-      .nav-links a {
-        font-size: 0.7rem; /* Adjusted font size for smaller screens */
-      }
-      .banner {
-        max-height: 400px; /* Reduced height for smaller screens */
-      }
+      width: 1200px; /* 固定宽度 */
+      margin: 0 auto; /* 居中对齐 */
+      font-size: 16px; /* 固定字体大小 */
+      transform: scale(0.5); /* 缩小页面 */
+      transform-origin: top left; /* 确保缩放从左上角开始 */
+      overflow: hidden; /* 防止滚动条出现 */
+    }
+    .container {
+      width: 1000px; /* 固定宽度 */
+      margin: 0 auto; /* 居中对齐 */
+    }
+    /* 其他样式保持不变 */
+ 
     }
 
     @media (max-width: 480px) {
 
-      body {
-      font-family: Andale Mono, sans-serif;/* 手机端使用 Andale Mono */
-      }
-      h1 {
-        font-size: 1.8rem; /* Further adjusted font size for very small screens */
-      }
-      .intro h1, .contact h2 {
-        font-size: 1rem; /* Further adjusted font size for very small screens */
-      }
-      .intro p, .contact p, .language-section p, .social-links {
-        font-size: 0.8rem; /* Further adjusted font size for very small screens */
-      }
-      .nav-links a {
-        font-size: 0.8rem; /* Further adjusted font size for very small screens */
-      }
-      .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Further adjusted grid for very small screens */
-        gap: 5px; /* Reduce gap for smaller screens */
-      }
-      .banner {
-        max-height: 300px; /* Further reduced height for very small screens */
-      }
+     body {
+      width: 1200px; /* 固定宽度 */
+      margin: 0 auto; /* 居中对齐 */
+      font-size: 16px; /* 固定字体大小 */
+      transform: scale(0.5); /* 缩小页面 */
+      transform-origin: top left; /* 确保缩放从左上角开始 */
+      overflow: hidden; /* 防止滚动条出现 */
     }
+    .container {
+      width: 1000px; /* 固定宽度 */
+      margin: 0 auto; /* 居中对齐 */
+    }
+    /* 其他样式保持不变 */
   </style>
 </head>
 <body>
