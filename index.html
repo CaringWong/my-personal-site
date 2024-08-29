@@ -91,7 +91,7 @@
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 10px;
       max-width: 1200px; /* 设置最大宽度，根据需要调整 */
-  margin: 0 auto; /* 居中对齐 */
+      margin: 0 auto; /* 居中对齐 */
     }
     .gallery a {
       display: block;
@@ -107,92 +107,30 @@
       object-fit: cover;
       display: block;
     }
-    .gallery a:nth-child(1) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-    .gallery a:nth-child(2) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-    .gallery a:nth-child(3) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-    .gallery a:nth-child(4) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-    .gallery a:nth-child(5) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-    .gallery a:nth-child(6) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-   .gallery a:nth-child(7) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-       .gallery a:nth-child(8) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-          .gallery a:nth-child(11) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-              .gallery a:nth-child(12) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-                  .gallery a:nth-child(13) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-                     .gallery a:nth-child(14) {
-      grid-column: span 1;
-      grid-row: span 1;
-    }
-                         .gallery a:nth-child(15) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-                             .gallery a:nth-child(16) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-                                 .gallery a:nth-child(17) {
-      grid-column: span 3;
-      grid-row: span 1;
-    }
-                                     .gallery a:nth-child(18) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-                                       .gallery a:nth-child(23) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-   .gallery a:nth-child(26) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-       .gallery a:nth-child(27) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-    .gallery a:nth-child(31) {
-      grid-column: span 3;
-      grid-row: span 1;
-    }
-        .gallery a:nth-child(34) {
-      grid-column: span 2;
-      grid-row: span 1;
-    }
-    /* Add more specific styles for child elements if needed */
-    
+    /* Gallery items styles for specific child elements */
+    .gallery a:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery a:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+    .gallery a:nth-child(3) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(4) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(5) { grid-column: span 1; grid-row: span 1; }
+    .gallery a:nth-child(6) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(7) { grid-column: span 1; grid-row: span 1; }
+    .gallery a:nth-child(8) { grid-column: span 1; grid-row: span 1; }
+    .gallery a:nth-child(11) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(12) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(13) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(14) { grid-column: span 1; grid-row: span 1; }
+    .gallery a:nth-child(15) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(16) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(17) { grid-column: span 3; grid-row: span 1; }
+    .gallery a:nth-child(18) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(23) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(26) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(27) { grid-column: span 2; grid-row: span 1; }
+    .gallery a:nth-child(31) { grid-column: span 3; grid-row: span 1; }
+    .gallery a:nth-child(34) { grid-column: span 2; grid-row: span 1; }
+
+    /* Navigation links styles */
     .nav-links {
       text-align: center;
       margin-bottom: 20px;
@@ -208,46 +146,32 @@
     }
     .nav-links a:hover {
       border-bottom: 10px solid #333;
+    }
 
-      
-            /* Add media queries for responsive design */
-      
-      
-      @media (max-width: 768px) {
-      
-          body {
-      width: 768px; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-      font-size: 16px; /* 固定字体大小 */
-      font-family: Andale Mono, sans-serif;
-      transform: scale(0.5); /* 缩小页面 */
-      transform-origin: top left; /* 确保缩放从左上角开始 */
-      overflow: hidden; /* 防止滚动条出现 */
-    }
-    .container {
-      width: 1000px; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-    }
-    /* 其他样式保持不变 */
- 
+    /* Media queries for responsive design */
+    @media (max-width: 768px) {
+      body {
+        transform: scale(0.8); /* 缩小页面到80% */
+        transform-origin: top left;
+        width: 100%; /* 使用视口宽度 */
+        overflow-x: auto; /* 防止水平滚动条出现 */
+      }
+      .container {
+        width: 100%; /* 自适应宽度 */
+      }
     }
 
     @media (max-width: 480px) {
-
-     body {
-      width: 480px; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-      font-size: 16px; /* 固定字体大小 */
-      font-family: Andale Mono, sans-serif;
-      transform: scale(0.5); /* 缩小页面 */
-      transform-origin: top left; /* 确保缩放从左上角开始 */
-      overflow: hidden; /* 防止滚动条出现 */
+      body {
+        transform: scale(0.6); /* 缩小页面到60% */
+        transform-origin: top left;
+        width: 100%; /* 使用视口宽度 */
+        overflow-x: auto; /* 防止水平滚动条出现 */
+      }
+      .container {
+        width: 100%; /* 自适应宽度 */
+      }
     }
-    .container {
-      width: 1000px; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-    }
-    /* 其他样式保持不变 */
   </style>
 </head>
 <body>
@@ -255,9 +179,9 @@
   <!-- Banner Section -->
   <div class="banner">
     <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
-    <img src="https://s3.bmp.ovh/imgs/2024/08/29/03d58c5956cf4669.jpg" alt="Banner Image">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/03d58c5956cf4669.jpg" alt="Banner Image">
+    </div>
   </div>
-</div>
 
   <!-- Main Content -->
   <header>
@@ -268,15 +192,15 @@
 
   <div class="container">
     <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
-    <!-- Navigation Links -->
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="illustration.html">Illustration</a>
-      <a href="#products">Products</a>
-      <a href="#publications">Publications</a>
-      <a href="https://www.inprnt.com/gallery/caringwong/">Store</a>
-      <a href="#contact">Contact</a>
-    </div>
+      <!-- Navigation Links -->
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="illustration.html">Illustration</a>
+        <a href="#products">Products</a>
+        <a href="#publications">Publications</a>
+        <a href="https://www.inprnt.com/gallery/caringwong/">Store</a>
+        <a href="#contact">Contact</a>
+      </div>
 
     <!-- Gallery Section -->
     <div class="gallery">
