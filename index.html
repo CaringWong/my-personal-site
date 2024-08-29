@@ -211,6 +211,19 @@
 
       
             /* Add media queries for responsive design */
+      
+@font-face {
+  font-family: 'Andale Mono';
+  src: url('path/to/andale-mono.woff2') format('woff2'),
+       url('path/to/andale-mono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Andale Mono', monospace;
+}
+      
     @media (max-width: 768px) {
       body {
         font-family: Andale Mono, monospace; /* 手机端使用 Andale Mono */
