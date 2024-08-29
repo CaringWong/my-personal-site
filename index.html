@@ -212,57 +212,46 @@
       
             /* Add media queries for responsive design */
       
-@font-face {
-  font-family: 'Andale Mono';
-  src: url('path/to/andale-mono.woff2') format('woff2'),
-       url('path/to/andale-mono.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: 'Andale Mono', monospace;
-}
       
-    @media (max-width: 768px) {
-      body {
-        font-family: Andale Mono, monospace; /* 手机端使用 Andale Mono */
+      @media (max-width: 768px) 
+          body {
+      font-family: Andale Mono, sans-serif;/* 手机端使用 Andale Mono */
       }
       h1 {
-        font-size: 1.8rem; /* Adjusted font size for smaller screens */
+        font-size: 3.2rem; /* Adjusted font size for smaller screens */
       }
       .intro h1, .contact h2 {
         font-size: 1.2rem; /* Adjusted font size for smaller screens */
       }
       .intro p, .contact p, .language-section p, .social-links {
-        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+        font-size: 1rem; /* Adjusted font size for smaller screens */
       }
       .nav-links a {
-        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+        font-size: 1rem; /* Adjusted font size for smaller screens */
       }
       .banner {
         max-height: 400px; /* Reduced height for smaller screens */
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 480px) 
       body {
-        font-family: Andale Mono, monospace; /* 手机端使用 Andale Mono */
+      font-family: Andale Mono, sans-serif;/* 手机端使用 Andale Mono */
       }
       h1 {
-        font-size: 1.6rem; /* Further adjusted font size for very small screens */
+        font-size: 3.2rem; /* Further adjusted font size for very small screens */
       }
       .intro h1, .contact h2 {
-        font-size: 1rem; /* Further adjusted font size for very small screens */
+        font-size: 1.2rem; /* Further adjusted font size for very small screens */
       }
       .intro p, .contact p, .language-section p, .social-links {
-        font-size: 0.8rem; /* Further adjusted font size for very small screens */
+        font-size: 1rem; /* Further adjusted font size for very small screens */
       }
       .nav-links a {
-        font-size: 0.8rem; /* Further adjusted font size for very small screens */
+        font-size: 1rem; /* Further adjusted font size for very small screens */
       }
       .gallery {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Further adjusted grid for very small screens */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Further adjusted grid for very small screens */
         gap: 5px; /* Reduce gap for smaller screens */
       }
       .banner {
