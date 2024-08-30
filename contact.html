@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CaringWong Illustration</title>
+  <title>Contact - CaringWong</title>
   <link rel="icon" href="https://s3.bmp.ovh/imgs/2024/08/29/89c4c09e63734f40.png" type="image/x-icon">
   <style>
+    html, body {
+      height: 100%; /* Ensure the body takes full height */
+      margin: 0;
+    }
     body {
       font-family: Andale Mono, sans-serif;
-      margin: 0;
-      padding: 0;
       line-height: 1.6;
       color: #333;
       background-color: #fff; /* Full white background */
+      display: flex;
+      flex-direction: column; /* Allow flex column layout */
     }
     header {
       text-align: center;
       padding: 20px;
-      font-size: 0.8em;
     }
     header h1 a {
-      font-size: 1.8em;
+      font-size: 1.5em;
       text-decoration: none;
       color: #2c3e50; /* Title color */
     }
     .container {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       width: 80%;
       max-width: 1000px;
       margin: 20px auto;
       padding: 20px;
-    }
-    h1 {
-      margin-top: 0;
-      margin-bottom: 20px; /* Increased space below the heading */
+      flex: 1; /* Allow container to grow and push footer down */
     }
     .form-group {
-      margin-bottom: 20px; /* Increased space between form groups */
+      margin-bottom: 15px;
     }
     .form-group label {
       display: block;
@@ -66,124 +66,57 @@
     .form-group button:hover {
       background-color: #0056b3;
     }
-    .social-links {
-      margin-top: 40px; /* Increased space above social links */
-      font-size: 1rem;
-      text-align: center; /* Center align the social links */
-    }
-    .social-links a {
-      display: inline-block;
-      margin: 0 0px; /* Increased space between social media icons */
-    }
-    .social-links img {
-      width: 30px; /* Increased icon size */
-      height: 30px;
-      transition: opacity 0.3s;
-    }
-    .social-links img:hover {
-      opacity: 0.7;
-    }
     footer {
       background-color: #fff;
       color: #333;
       padding: 1.2rem;
       text-align: center;
       border-top: 1px solid #ddd;
-      margin-top: 40px;
     }
     footer p {
       font-size: 1rem;
       margin: 0;
       line-height: 1.6;
     }
-     /* Media queries for responsive design */
-     @media (max-width: 768px) {
-      body {
-        transform: scale(1); /* 缩小页面到80% */
-        transform-origin: top center;
-        font-family: Andale Mono, monospace;
-        font-size: 14px;
-        width: 100%; /* 使用视口宽度 */
-        overflow-x: auto; /* 防止水平滚动条出现 */
-      }
+    @media (max-width: 768px) {
       .container {
-      width: 95%; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-      padding-left: 5px; /* 左侧留白 */
-      padding-right: 5px; /* 右侧留白 */
+        flex-direction: column;
+        align-items: center;
       }
-    }
-
-     @media (max-width: 480px) {
-      body {
-        transform: scale(1); /* 缩小页面到60% */
-        transform-origin: top center;
-        font-family: Andale Mono, monospace;
-        font-size: 14px;
-        width: 100%; /* 使用视口宽度 */
-        overflow-x: auto; /* 防止水平滚动条出现 */
-      }
-      .container {
-      width: 95%; /* 固定宽度 */
-      margin: 0 auto; /* 居中对齐 */
-      padding-left: 5px; /* 左侧留白 */
-      padding-right: 5px; /* 右侧留白 */
+      .form-group {
+        width: 95%;
       }
     }
   </style>
 </head>
 <body>
-    <header>
-        <h1><a href="https://caringwong.com" target="_blank">CaringWong Illustration</a></h1>
-    </header>
+  <header>
+    <h1><a href="https://caringwong.com">CaringWong Illustration</a></h1>
+  </header>
+  <div class="container">
+    <h1>Contact</h1>
+    <form action="https://formspree.io/f/mgvwdpbe" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
   
-    <div class="container">
-        <h1>Contact Us</h1>
-      
-        <form action="https://formspree.io/f/mgvwdpbe" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit">Send Message</button>
-            </div>
-        </form>
-        
-        <div style="height: 40px;"></div> <!-- Added vertical spacing between form and social links -->
-
-        <section id="contact" class="contact">
-            <div class="social-links">
-                <a href="https://www.instagram.com/caringwong_art/" target="_blank" title="Instagram">
-                    <img src="https://s3.bmp.ovh/imgs/2024/08/29/f469638e3c7f5e53.png" alt="Instagram">
-                </a>
-                <a href="https://www.deviantart.com/caringwong" target="_blank" title="DeviantArt">
-                    <img src="https://s3.bmp.ovh/imgs/2024/08/29/61328b608e3b8b79.png" alt="DeviantArt">
-                </a>
-                <a href="https://www.inprnt.com/profile/caringwong/" target="_blank" title="INPRNT">
-                    <img src="https://s3.bmp.ovh/imgs/2024/08/29/69c269efb745532d.png" alt="INPRNT">
-                </a>
-                <a href="https://www.xiaohongshu.com/user/profile/5f79d58d000000000101e2e7?xhsshare=CopyLink&appuid=5f79d58d000000000101e2e7&apptime=1694424270" target="_blank" title="小红书">
-                    <img src="https://s3.bmp.ovh/imgs/2024/08/29/e271f8173c21fe58.png" alt="小红书">
-                </a>
-                <a href="https://caring201.zcool.com.cn/" target="_blank" title="站酷">
-                    <img src="https://s3.bmp.ovh/imgs/2024/08/29/7a22206259f8f2e7.png" alt="站酷">
-                </a>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 CaringWong. All rights reserved.</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CaringWong. All rights reserved.</p>
+  </footer>
 </body>
 </html>
