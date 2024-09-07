@@ -6,4 +6,5 @@
 - [Illustration](illustration.html)
 - [Publications](publications.html)
 - [Products](products.html)
+- [Projects](projects.html)
 - [Contact](contact.html)
