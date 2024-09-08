@@ -4,193 +4,370 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CaringWong Illustration</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/stamp.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <style>
-        body {
-            font-family: Andale Mono, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 1200px; /* 增大预览框宽度 */
-            margin: 50px auto;
-            position: relative;
-        }
-        .caption {
-            position: absolute;
-            top: -30px; /* 在预览框上方10px */
-            left: 50%;
-            transform: translateX(-50%); /* 居中对齐 */
-            color: gray; /* 文字颜色为灰色 */
-            font-size: 18px; /* 文字大小可以根据需求调整 */
-            padding: 0;
-            margin-bottom: 10px; /* 增加文字与图片的距离 */
-            z-index: 10; /* 确保文字在预览框上层 */
-        }
-        .image-slider {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 800px; /* 增大预览框高度 */
-        }
-        .image-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* 保持图片等比例缩放 */
-            display: none;
-            transition: opacity 0.5s ease;
-        }
-        .image-slider img.active {
-            display: block;
-        }
-        .navigation {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .navigation button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 24px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10; /* 确保按钮在图片上层 */
-        }
-        .navigation .prevBtn {
-            left: 20px; /* 将按钮定位在图片左侧外面 */
-        }
-        .navigation .nextBtn {
-            right: 20px; /* 将按钮定位在图片右侧外面 */
-        }
-        /* 禁止图片拖拽 */
-        .image-slider img {
-            -webkit-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
-        }
-    </style>
-</head>
-<body>
-   <!-- Main Content -->
-  <header>
-    <div class="container">
-      <h1>CaringWong Illustration</h1>
-    </div>
-  </header>
-  
-     <div style="height: 100px;"></div>
-  
-    <div class="container">
-        <div class="caption">Rue Saint-Dominique, Paris</div> <!-- 图片说明文字 -->
-        <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
-             <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" alt="Pacing">
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Chasing the Sea Sunrise.jpg" alt="Chasing the Sea Sunrise">
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RueSaint-Dominique.jpg" class="active" alt="Rue Saint-Dominique, Paris">
-            <img src="image3.jpg" alt="Image 3">
-            <!-- Add more images as needed -->
-            <div class="navigation">
-                <button id="prevBtn" class="prevBtn">❮</button>
-                <button id="nextBtn" class="nextBtn">❯</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const images = document.querySelectorAll('.image-slider img');
-        const captions = [
-            'Pacing',
-            'Chasing the Sea Sunrise',
-            'Rue Saint-Dominique, Paris',
-            // Add more captions as needed
-        ];
-        const captionElement = document.querySelector('.caption');
-        let currentIndex = 0;
-
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-            captionElement.textContent = captions[index]; // 更新说明文字
-        }
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
-        });
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            showImage(currentIndex);
-        });
-
-        showImage(currentIndex); // Initialize with the first image
-    </script>
-  
- <div style="height: 100px;"></div>
-  
-  <div class="container">
-        <div class="caption">Rue Saint-Dominique, Paris</div> <!-- 图片说明文字 -->
-        <div class="image-slider" oncontextmenu="return false;"> <!-- 禁用右键菜单 -->
-             <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Pacing.jpg" alt="Pacing">
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/Chasing the Sea Sunrise.jpg" alt="Chasing the Sea Sunrise">
-            <img src="https://raw.githubusercontent.com/CaringWong/my-personal-site/main/images/RueSaint-Dominique.jpg" class="active" alt="Rue Saint-Dominique, Paris">
-            <img src="image3.jpg" alt="Image 3">
-            <!-- Add more images as needed -->
-            <div class="navigation">
-                <button id="prevBtn" class="prevBtn">❮</button>
-                <button id="nextBtn" class="nextBtn">❯</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const images = document.querySelectorAll('.image-slider img');
-        const captions = [
-            'Pacing',
-            'Chasing the Sea Sunrise',
-            'Rue Saint-Dominique, Paris',
-            // Add more captions as needed
-        ];
-        const captionElement = document.querySelector('.caption');
-        let currentIndex = 0;
-
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-            captionElement.textContent = captions[index]; // 更新说明文字
-        }
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
-        });
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            showImage(currentIndex);
-        });
-
-        showImage(currentIndex); // Initialize with the first image
-    </script>
+  <link rel="icon" href="https://s3.bmp.ovh/imgs/2024/08/29/89c4c09e63734f40.png" type="image/x-icon">
+  <style>
+html, body {
+      height: 100%; /* Ensure the body takes full height */
+      margin: 0;
+    }
+    body {
+      font-family: Andale Mono, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff; /* Full white background */
+      display: flex;
+      flex-direction: column; /* Allow flex column layout */
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 a {
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #2c3e50; /* Title color */
+    }
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack contents vertically */
+      align-items: center; /* Center contents horizontally */
+      width: 80%;
+      max-width: 1200px; /* Set max-width to 1200px */
+      margin: 20px auto;
+      padding: 20px;
+      flex: 1; /* Allow container to grow and push footer down */
+    }
+    .profile-info {
+      text-align: center;
+      margin-bottom: 20px; /* Margin between text and photo */
+    }
+    .profile-photo img {
+      width: 1200px; /* Fixed width of the image */
+      height: auto;
+      display: block; /* Center the image */
+      margin: 0 auto; /* Center the image horizontally */
+    }
+      .image-container {
+      width: 1200px; /* 设置框的宽度 */
+      height：900ox；
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height: auto; /* 保持图片的纵横比 */
+       }
+    .social-links {
+      display: flex;
+      justify-content: center; /* Center the items horizontally */
+      margin-top: -10px;
+      font-size: 1rem;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 5px; /* Adjust margin between icons */
+    }
+    .social-links img {
+      width: 25px;
+      height: 25px;
+      transition: opacity 0.3s;
+    }
+    .social-links img:hover {
+      opacity: 0.7;
+    }
+    #contact {
+      text-align: center; /* Center align text in the contact section */
+      margin-top: 10px; /* Add some space above the contact section */
+    }
+    #contact h2 {
+      margin: -15px 0; /* Add space around the heading */
+    }
+    #contact p {
+      margin: 20px 0; /* Add space around the paragraph */
+    }
     
-     <!-- Footer -->
+    
+footer {
+  background-color: #fff;
+  color: #333;
+  padding: 1.2rem;
+  text-align: center;
+  position: relative; /* 为伪元素设置定位上下文 */
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: 50%; /* 将伪元素水平居中 */
+  transform: translateX(-50%); /* 使伪元素水平居中对齐 */
+  top: 0;
+  width: 1200px; /* 固定宽度为 1200 像素 */
+  border-top: 1px solid #ddd; /* 设置线条样式 */
+}
+    
+    
+    @media (max-width: 768px) {
+      .container {
+        width: 95%; /* Fixed width */
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
+      }
+      .profile-photo img {
+        width: 100%; /* Responsive image width */
+        max-width: 600px; /* Max width for smaller screens */
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        width: 95%; /* Fixed width */
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
+      }
+      .profile-photo img {
+        width: 100%; /* Responsive image width */
+        max-width: 400px; /* Max width for smaller screens */
+      }
+    }
+.gallery-container {
+  width: 1100px;
+  padding-bottom: 10px; /* 添加底部内边距以适应滚动条 */
+}
+
+.thumbnail-container {
+  display: inline-block;
+  margin: 5px;
+}
+
+.thumbnail {
+  height: 150px; /* 调整缩略图的高度 */
+  width: auto; /* 自动宽度，以保持纵横比 */
+  cursor: pointer;
+}
+
+    .full-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 1);
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      /* Flexbox to center content */
+    }
+
+    .full-image img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+    }
+
+    .full-image .image-name {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      font-size: 20px;
+      color: black;
+    }
+
+
+  </style>
+</head>
+
+   <header>
+    <h1><a href="https://caringwong.com">CaringWong Illustration</a></h1>
+  </header>
+  <div class="container">
+    <div class="profile-info">
+            <h1>Archive Illustration Series</h1>
+      
+       <div style="height: 5px;"></div>
+      
+      <p>Lonely Astronaut Series </p>
+      
+  <div class="gallery-container" id="gallery">
+    <!-- Example thumbnails -->
+    <!-- Using the provided image link -->
+
+    
+    <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/f55fa1579ff6d220.jpg" alt="Thumbnail 3" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/f55fa1579ff6d220.jpg" data-name="Chasing the Sea Sunrise">
+
+       
+
+               
+           <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/a5854d8e7922a5db.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/a5854d8e7922a5db.jpg" data-name="Carving">
+    </div>
+    
+        
+       <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/e2ce47d1c85a5b86.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/e2ce47d1c85a5b86.jpg" data-name="Snow Wall">
+    </div>
+           
+
+    
+       <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/217a5eb6dd11ada8.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/217a5eb6dd11ada8.jpg" data-name="Glide II">
+    </div> 
+            
+    
+       <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/eb03181cd5a41edf.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/eb03181cd5a41edf.jpg" data-name="Edge">
+    </div>
+      
+       <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/09/08/4430f25a33060329.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/09/08/4430f25a33060329.jpg" data-name="Bottom">
+    </div>
+
+       
+          
+    </div>
+    <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/71ec24ebf147165b.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/71ec24ebf147165b.jpg" data-name="Landing">
+    </div>
+            
+        <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/021234174814fc41.jpg" alt="Thumbnail 1" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/021234174814fc41.jpg" data-name="Glide">
+    </div>
+    
+    <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/08/29/acc3ca12f3a7caa0.jpg" alt="Thumbnail 2" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/08/29/acc3ca12f3a7caa0.jpg" data-name="Pacing">
+    </div>
+    
+               
+        
+    
+       <div class="thumbnail-container">
+      <img src="https://s3.bmp.ovh/imgs/2024/09/08/2f28f5706bb1fd35.jpg" alt="Thumbnail 4" class="thumbnail" data-full="https://s3.bmp.ovh/imgs/2024/09/08/2f28f5706bb1fd35.jpg" data-name="A Sunny Day">
+    </div>
+
+    
+    <!-- Add more thumbnails as needed -->
+  </div>
+
+  <div class="pagination" id="pagination">
+    <!-- Pagination buttons will be generated here -->
+  </div>
+
+  <div class="full-image" id="fullImageModal">
+    <button class="close-btn" id="closeButton">&times;</button>
+    <img src="" alt="Full Image" id="fullImage">
+    <div class="image-name" id="imageName">Image Name</div>
+  </div>
+
+  <script>
+    const imagesPerPage = 4; // Number of images per page
+    const thumbnails = Array.from(document.querySelectorAll('.thumbnail-container'));
+    const totalPages = Math.ceil(thumbnails.length / imagesPerPage);
+    const gallery = document.getElementById('gallery');
+    const pagination = document.getElementById('pagination');
+    const fullImageModal = document.getElementById('fullImageModal');
+    const fullImage = document.getElementById('fullImage');
+    const closeButton = document.getElementById('closeButton');
+    const imageName = document.getElementById('imageName');
+
+    function showPage(pageNumber) {
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.style.display = (Math.floor(index / imagesPerPage) === pageNumber - 1) ? 'inline-block' : 'none';
+      });
+      document.querySelectorAll('.pagination button').forEach((button, index) => {
+        button.classList.toggle('active', index + 1 === pageNumber);
+      });
+    }
+
+
+
+    function showFullImage(src, name) {
+      fullImage.src = src;
+      imageName.textContent = name;
+      fullImageModal.style.display = 'flex';
+    }
+
+    function hideFullImage() {
+      fullImageModal.style.display = 'none';
+    }
+
+    document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+      thumbnail.addEventListener('click', (event) => {
+        const fullSrc = event.target.dataset.full;
+        const name = event.target.dataset.name;
+        showFullImage(fullSrc, name);
+      });
+    });
+
+    closeButton.addEventListener('click', hideFullImage);
+
+    // Hide the full-image modal when clicking anywhere outside of the image
+    fullImageModal.addEventListener('click', (event) => {
+      if (event.target === fullImageModal) {
+        hideFullImage();
+      }
+    });
+
+    createPagination();
+    showPage(1); // Show the first page by default
+  </script>
+</body>
+</html>
+
+   
+      <!-- Add more content here as needed -->
+      
+      <div style="height: 100px;"></div>
+      
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: caringempire@gmail.com</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/caringwong_art/" title="Instagram">
+          <img src="https://s3.bmp.ovh/imgs/2024/08/29/f469638e3c7f5e53.png" alt="Instagram">
+        </a>
+        <a href="https://www.deviantart.com/caringwong" title="DeviantArt">
+          <img src="https://s3.bmp.ovh/imgs/2024/08/29/61328b608e3b8b79.png" alt="DeviantArt">
+        </a>
+        <a href="https://www.inprnt.com/profile/caringwong/" title="INPRNT">
+          <img src="https://s3.bmp.ovh/imgs/2024/08/29/69c269efb745532d.png" alt="INPRNT">
+        </a>
+        <a href="https://www.xiaohongshu.com/user/profile/5f79d58d000000000101e2e7?xhsshare=CopyLink&appuid=5f79d58d000000000101e2e7&apptime=1694424270" title="小红书">
+          <img src="https://s3.bmp.ovh/imgs/2024/08/29/e271f8173c21fe58.png" alt="小红书">
+        </a>
+        <a href="https://caring201.zcool.com.cn/" title="站酷">
+          <img src="https://s3.bmp.ovh/imgs/2024/08/29/7a22206259f8f2e7.png" alt="站酷">
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 CaringWong. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
