@@ -95,6 +95,35 @@
       margin: 0;
       line-height: 1.6;
     }
+
+      @media (max-width: 768px) {
+      .container {
+        width: 95%; /* Fixed width */
+        font-family: Andale Mono, monospace;
+        font-size: 12px;
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
+      }
+      .profile-photo img {
+        width: 100%; /* Responsive image width */
+        max-width: 600px; /* Max width for smaller screens */
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        width: 95%; /* Fixed width */
+        font-family: Andale Mono, monospace;
+        font-size: 12px;
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
+      }
+      .profile-photo img {
+        width: 100%; /* Responsive image width */
+        max-width: 400px; /* Max width for smaller screens */
+      }
+    }
   </style>
 </head>
 <body>
