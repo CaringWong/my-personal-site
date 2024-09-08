@@ -49,7 +49,7 @@
     }
       .image-container {
       width: 1200px; /* 设置框的宽度 */
-      height：900ox；
+      height：900px；
       overflow-x: auto; /* 启用水平滚动条 */
       overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
       white-space: nowrap; /* 防止图片换行 */
@@ -103,6 +103,8 @@
     @media (max-width: 768px) {
       .container {
         width: 95%; /* Fixed width */
+        font-family: Andale Mono, monospace;
+        font-size: 12px;
         margin: 0 auto; /* Center align */
         padding-left: 5px; /* Left padding */
         padding-right: 5px; /* Right padding */
@@ -111,10 +113,23 @@
         width: 100%; /* Responsive image width */
         max-width: 600px; /* Max width for smaller screens */
       }
+            .image-container {
+      width: 600px; /* 设置框的宽度 */  
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height
     }
     @media (max-width: 480px) {
       .container {
         width: 95%; /* Fixed width */
+        font-family: Andale Mono, monospace;
+        font-size: 12px;
         margin: 0 auto; /* Center align */
         padding-left: 5px; /* Left padding */
         padding-right: 5px; /* Right padding */
@@ -123,6 +138,17 @@
         width: 100%; /* Responsive image width */
         max-width: 400px; /* Max width for smaller screens */
       }
+            .image-container {
+      width: 400px; /* 设置框的宽度 */
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height
     }
   </style>
 </head>
