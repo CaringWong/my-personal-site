@@ -20,13 +20,41 @@ html, body {
     }
     header {
       text-align: center;
-      padding: 20px;
+      padding: 0px;
     }
     header h1 a {
       font-size: 1.5em;
       text-decoration: none;
       color: #2c3e50; /* Title color */
     }
+    header a img {
+            max-width: 100%; /* Make sure the image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure there's no extra space below the image */
+       margin-bottom: -20px;
+        }
+    
+    /* Navigation links styles */
+    .nav-links {
+      text-align: center;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+    .nav-links a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: #333;
+      border-bottom: none transparent;
+      transition: border-color 0.3s;
+    }
+    .nav-links a:hover {
+      border-bottom: none #333;
+    }
+    
+    
+    
     .container {
       display: flex;
       flex-direction: column; /* Stack contents vertically */
@@ -103,7 +131,7 @@ footer::before {
   left: 50%; /* 将伪元素水平居中 */
   transform: translateX(-50%); /* 使伪元素水平居中对齐 */
   top: 0;
-  width: 880px; /* 固定宽度为 1200 像素 */
+  width: 100%; /* 固定宽度为 1200 像素 */
   border-top: 1px solid #ddd; /* 设置线条样式 */
 }
  
@@ -286,13 +314,26 @@ footer::before {
   </style>
 </head>
 
-   <header>
-    <h1><a href="https://caringwong.com">CaringWong Illustration</a></h1>
-  </header>
+    <header>
+        <a href="https://caringwong.com">
+            <img src="https://s3.bmp.ovh/imgs/2024/09/09/a18bf656684b80da.jpg" alt="CaringWong Illustration">
+        </a>
+    </header>
+  
   <div class="container">
     <div class="profile-info">
 
+      <div class="nav-links">
+        <a href="index.html">Feature</a>
+        <a href="about.html">About</a>
+        <a href="Work.html">Work</a>
+        <a href="https://www.inprnt.com/gallery/caringwong/">Store</a>
+        <a href="contact.html">Contact</a>
+      </div>   
+
+
       
+       <div style="height: 100px;"></div>      
     
       
             <h1>Sky Calendar Series</h1>
