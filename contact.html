@@ -6,35 +6,86 @@
   <title>CaringWong Illustration</title>
   <link rel="icon" href="https://s3.bmp.ovh/imgs/2024/08/29/89c4c09e63734f40.png" type="image/x-icon">
   <style>
+html, body {
+      height: 100%; /* Ensure the body takes full height */
+      margin: 0;
+    }
     body {
       font-family: Andale Mono, sans-serif;
-      margin: 0;
-      padding: 0;
       line-height: 1.6;
       color: #333;
       background-color: #fff; /* Full white background */
+      display: flex;
+      flex-direction: column; /* Allow flex column layout */
     }
     header {
       text-align: center;
-      padding: 20px;
+      padding: 0px;
     }
     header h1 a {
       font-size: 1.5em;
       text-decoration: none;
       color: #2c3e50; /* Title color */
     }
+    header a img {
+            max-width: 100%; /* Make sure the image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure there's no extra space below the image */
+       margin-bottom: -20px;
+        }
+    
+    /* Navigation links styles */
+    .nav-links {
+      text-align: center;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+    .nav-links a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: #333;
+      border-bottom: none transparent;
+      transition: border-color 0.3s;
+    }
+    .nav-links a:hover {
+      border-bottom: none #333;
+    }
+    
+    
+    
     .container {
       display: flex;
-      flex-direction: column;
-      width: 80%;
-      max-width: 1000px;
+      flex-direction: column; /* Stack contents vertically */
+      align-items: center; /* Center contents horizontally */
+      width: 100%;
+      max-width: 900px; /* Set max-width to 1200px */
       margin: 20px auto;
       padding: 20px;
+      flex: 1; /* Allow container to grow and push footer down */
     }
-    h1 {
+    .profile-photo {
+      flex: 1;
+      max-width: 40%;
+      margin-right: 80px; /* Increased margin between photo and text */
+    }
+    .profile-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%; /* Makes the image circular */
+      object-fit: cover; /* Ensures the image covers the circle */
+    }
+    .profile-info {
+      flex: 2;
+    }
+    .profile-info h1 {
       margin-top: 0;
-      margin-bottom: 20px; /* Increased space below the heading */
+      color: #2c3e50;
     }
+    .profile-info p {
+      margin-bottom: 1.1em;
+      }
     .form-group {
       margin-bottom: 20px; /* Increased space between form groups */
     }
@@ -43,7 +94,7 @@
       margin-bottom: 5px;
     }
     .form-group input, .form-group textarea {
-      width: 100%;
+      width: 700px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -51,7 +102,7 @@
     }
     .form-group textarea {
       resize: vertical;
-      height: 150px;
+      height: 300px;
     }
     .form-group button {
       background-color: #007bff;
@@ -66,96 +117,173 @@
       background-color: #0056b3;
     }
     .social-links {
-      margin-top: 40px; /* Increased space above social links */
+      display: flex;
+      justify-content: left; /* Center the items horizontally */
+      margin-top: -10px;
       font-size: 1rem;
-      text-align: center; /* Center align the social links */
     }
     .social-links a {
       display: inline-block;
-      margin: 0 15px; /* Increased space between social media icons */
+      margin: 0 5px; /* Adjust margin between icons */
     }
     .social-links img {
-      width: 30px; /* Increased icon size */
-      height: 30px;
+      width: 25px;
+      height: 25px;
       transition: opacity 0.3s;
+      justify-content: left;
     }
     .social-links img:hover {
       opacity: 0.7;
+      
     }
-    footer {
-      background-color: #fff;
-      color: #333;
-      padding: 1.2rem;
-      text-align: center;
-      border-top: 1px solid #ddd;
-      margin-top: 40px;
+    #contact {
+      text-align: left; /* Center align text in the contact section */
+      margin-top: 10px; /* Add some space above the contact section */
     }
-    footer p {
-      font-size: 1rem;
-      margin: 0;
-      line-height: 1.6;
+    #contact h2 {
+      margin: -15px 0; /* Add space around the heading */
     }
+    #contact p {
+      margin: 20px 0; /* Add space around the paragraph */
+    }
+    
+    
+footer {
+  background-color: #fff;
+  color: #333;
+  padding: 1.2rem;
+  text-align: center;
+  position: relative; /* 为伪元素设置定位上下文 */
+}
 
-      @media (max-width: 768px) {
+footer::before {
+  content: "";
+  position: absolute;
+  left: 50%; /* 将伪元素水平居中 */
+  transform: translateX(-50%); /* 使伪元素水平居中对齐 */
+  top: 0;
+  width: 1200px; /* 固定宽度为 1200 像素 */
+  border-top: 1px solid #ddd; /* 设置线条样式 */
+}
+ 
+
+    
+
+    
+    @media (max-width: 768px) {
       .container {
-        width: 95%; /* Fixed width */
+        width: 90%; /* Fixed width */
         font-family: Andale Mono, monospace;
         font-size: 12px;
+        word-wrap: break-word; /* 确保文本自动换行 */
+        overflow-wrap: break-word; /* 兼容性更好的换行属性 */
         margin: 0 auto; /* Center align */
         padding-left: 5px; /* Left padding */
         padding-right: 5px; /* Right padding */
       }
       .profile-photo img {
-        width: 100%; /* Responsive image width */
-        max-width: 600px; /* Max width for smaller screens */
-      }
+        width: 90%; /* Responsive image width */
+       max-width: 100%; /* 最大宽度为容器宽度 */
+       max-height: 580px; /* 最大高度限制，防止图片过高 */
+       }   
+            .image-container {
+      width: 580px; /* 设置框的宽度 */ 
+      height: 400px;
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height: 400;
     }
     @media (max-width: 480px) {
       .container {
-        width: 95%; /* Fixed width */
+        width: 90%; /* Fixed width */
         font-family: Andale Mono, monospace;
         font-size: 12px;
+        word-wrap: break-word; /* 确保文本自动换行 */
+        overflow-wrap: break-word; /* 兼容性更好的换行属性 */
         margin: 0 auto; /* Center align */
         padding-left: 5px; /* Left padding */
         padding-right: 5px; /* Right padding */
       }
       .profile-photo img {
-        width: 100%; /* Responsive image width */
-        max-width: 400px; /* Max width for smaller screens */
-      }
+        width: 90%; /* Responsive image width */
+       max-width: 100%; /* 最大宽度为容器宽度 */
+       max-height: 400px; /* 最大高度限制，防止图片过高 */
+       }   
+      .image-container {
+      width: 380px; /* 设置框的宽度 */
+      height: 400px;
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
     }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height: 400;
+    }
+
   </style>
 </head>
-<body>
+
     <header>
-        <h1><a href="https://caringwong.com">CaringWong Illustration</a></h1>
+        <a href="https://caringwong.com">
+            <img src="https://s3.bmp.ovh/imgs/2024/09/09/a18bf656684b80da.jpg" alt="CaringWong Illustration">
+        </a>
     </header>
   
+  <div class="container">
+    <div class="profile-info">
+
+      <div class="nav-links">
+        <a href="index.html">Feature</a>
+        <a href="about.html">About</a>
+        <a href="Work.html">Work</a>
+        <a href="https://www.inprnt.com/gallery/caringwong/">Store</a>
+        <a href="contact.html">Contact</a>
+      </div>   
+     
+    
+
+      <div class="container">
+
+        
     <div class="container">
         <h1>Contact</h1>
       
+      <p style="max-width: 700px; margin: 0 auto;">If you have any questions regarding drawing discussions, commissions, collaborations, or anything else, please feel free to leave a message.</p>
+      
+    
+  <div style="height: 100px;"></div> 
+      
         <form action="https://formspree.io/f/mgvwdpbe" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit">Send Message</button>
-            </div>
+       <div class="form-group">
+       <label for="name">Name:</label>
+       <input type="text" id="name" name="name" required>
+       </div>
+       <div class="form-group">
+       <label for="email">Email:</label>
+       <input type="email" id="email" name="email" required>
+       </div>
+       <div class="form-group">
+       <label for="message">Message:</label>
+       <textarea id="message" name="message" required></textarea>
+       </div>
+       <div class="form-group">
+       <button type="submit">Send Message</button>
+        </div>
         </form>
         
         <div style="height: 40px;"></div> <!-- Added vertical spacing between form and social links -->
 
         <section id="contact" class="contact">
-            <div class="social-links">
+        <div class="social-links">
                 <a href="https://www.instagram.com/caringwong_art/" target="_blank" title="Instagram">
                     <img src="https://s3.bmp.ovh/imgs/2024/08/29/f469638e3c7f5e53.png" alt="Instagram">
                 </a>
@@ -175,9 +303,12 @@
         </section>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 CaringWong. All rights reserved.</p>
-    </footer>
+
+    
+     <div style="height: 10px;"></div> 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CaringWong. All rights reserved.</p>
+  </footer>
 </body>
 </html>
