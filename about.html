@@ -6,7 +6,7 @@
   <title>CaringWong Illustration</title>
   <link rel="icon" href="https://s3.bmp.ovh/imgs/2024/08/29/89c4c09e63734f40.png" type="image/x-icon">
   <style>
-    html, body {
+html, body {
       height: 100%; /* Ensure the body takes full height */
       margin: 0;
     }
@@ -20,18 +20,47 @@
     }
     header {
       text-align: center;
-      padding: 20px;
+      padding: 0px;
     }
     header h1 a {
       font-size: 1.5em;
       text-decoration: none;
       color: #2c3e50; /* Title color */
     }
+    header a img {
+            max-width: 100%; /* Make sure the image is responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure there's no extra space below the image */
+       margin-bottom: -20px;
+        }
+    
+    /* Navigation links styles */
+    .nav-links {
+      text-align: center;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+    .nav-links a {
+      display: inline-block;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: #333;
+      border-bottom: none transparent;
+      transition: border-color 0.3s;
+    }
+    .nav-links a:hover {
+      border-bottom: none #333;
+    }
+    
+    
+    
     .container {
       display: flex;
-      flex-wrap: wrap;
-      width: 80%;
-      max-width: 1000px;
+      flex-direction: column; /* Stack contents vertically */
+      align-items: center; /* Center contents horizontally */
+      width: 100%;
+      max-width: 900px; /* Set max-width to 1200px */
       margin: 20px auto;
       padding: 20px;
       flex: 1; /* Allow container to grow and push footer down */
@@ -57,13 +86,16 @@
     .profile-info p {
       margin-bottom: 1.1em;
       }
+
     .social-links {
+      display: flex;
+      justify-content: center; /* Center the items horizontally */
       margin-top: -10px;
       font-size: 1rem;
     }
     .social-links a {
       display: inline-block;
-      margin: 0 0px;
+      margin: 0 5px; /* Adjust margin between icons */
     }
     .social-links img {
       width: 25px;
@@ -73,115 +105,183 @@
     .social-links img:hover {
       opacity: 0.7;
     }
-    footer {
-      background-color: #fff;
-      color: #333;
-      padding: 1.2rem;
-      text-align: center;
-      border-top: 1px solid #ddd;
+    #contact {
+      text-align: center; /* Center align text in the contact section */
+      margin-top: 10px; /* Add some space above the contact section */
     }
-    footer p {
-      font-size: 1rem;
-      margin: 0;
-      line-height: 1.6;
+    #contact h2 {
+      margin: -15px 0; /* Add space around the heading */
     }
+    #contact p {
+      margin: 20px 0; /* Add space around the paragraph */
+    }
+    
+    
+footer {
+  background-color: #fff;
+  color: #333;
+  padding: 1.2rem;
+  text-align: center;
+  position: relative; /* 为伪元素设置定位上下文 */
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  left: 50%; /* 将伪元素水平居中 */
+  transform: translateX(-50%); /* 使伪元素水平居中对齐 */
+  top: 0;
+  width: 100%; /* 固定宽度为 1200 像素 */
+  border-top: 1px solid #ddd; /* 设置线条样式 */
+}
+ 
+
+    
+
+    
     @media (max-width: 768px) {
       .container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .profile-photo {
-        max-width: 80%;
-        margin-right: 0;
-        margin-bottom: 20px;
-      }
-      .profile-info {
-        text-align: center;
-      }
-    }
-    /* Media queries for responsive design */
-    @media (max-width: 768px) {
-      body {
-        transform: scale(1); /* 缩小页面到80% */
-        transform-origin: top center;
+        width: 90%; /* Fixed width */
         font-family: Andale Mono, monospace;
-        font-size: 14px;
-        width: 100%; /* 使用视口宽度 */
-        overflow-x: auto; /* 防止水平滚动条出现 */
+        font-size: 12px;
+        word-wrap: break-word; /* 确保文本自动换行 */
+        overflow-wrap: break-word; /* 兼容性更好的换行属性 */
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
       }
+      .profile-photo img {
+        width: 90%; /* Responsive image width */
+       max-width: 100%; /* 最大宽度为容器宽度 */
+       max-height: 580px; /* 最大高度限制，防止图片过高 */
+       }   
+            .image-container {
+      width: 580px; /* 设置框的宽度 */ 
+      height: 400px;
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height: 400;
+    }
+    @media (max-width: 480px) {
       .container {
-        width: 95%; /* 固定宽度 */
-        margin: 0 auto; /* 居中对齐 */
-        padding-left: 5px; /* 左侧留白 */
-        padding-right: 5px; /* 右侧留白 */
+        width: 90%; /* Fixed width */
+        font-family: Andale Mono, monospace;
+        font-size: 12px;
+        word-wrap: break-word; /* 确保文本自动换行 */
+        overflow-wrap: break-word; /* 兼容性更好的换行属性 */
+        margin: 0 auto; /* Center align */
+        padding-left: 5px; /* Left padding */
+        padding-right: 5px; /* Right padding */
       }
+      .profile-photo img {
+        width: 90%; /* Responsive image width */
+       max-width: 100%; /* 最大宽度为容器宽度 */
+       max-height: 400px; /* 最大高度限制，防止图片过高 */
+       }   
+      .image-container {
+      width: 380px; /* 设置框的宽度 */
+      height: 400px;
+      overflow-x: auto; /* 启用水平滚动条 */
+      overflow-y: hidden; /* 禁用垂直滚动条（如果不需要的话） */
+      white-space: nowrap; /* 防止图片换行 */
+      border: 1px solid #ddd; /* 可选：边框样式 */
+    }
+    .image-container img {
+      display: inline-block; /* 让图片在水平滚动条内显示 */
+      width: auto; /* 允许图片在容器内缩放 */
+      height: 400;
     }
 
-    @media (max-width: 480px) {
-      body {
-        transform: scale(1); /* 缩小页面到60% */
-        transform-origin: top center;
-        font-family: Andale Mono, monospace;
-        font-size: 14px;
-        width: 100%; /* 使用视口宽度 */
-        overflow-x: auto; /* 防止水平滚动条出现 */
-      }
-      .container {
-        width: 95%; /* 固定宽度 */
-        margin: 0 auto; /* 居中对齐 */
-        padding-left: 5px; /* 左侧留白 */
-        padding-right: 5px; /* 右侧留白 */
-      }
-    }
   </style>
 </head>
-<body>
-  <header>
-    <h1><a href="https://caringwong.com">CaringWong Illustration</a></h1>
-  </header>
+
+    <header>
+        <a href="https://caringwong.com">
+            <img src="https://s3.bmp.ovh/imgs/2024/09/09/a18bf656684b80da.jpg" alt="CaringWong Illustration">
+        </a>
+    </header>
+  
   <div class="container">
+    <div class="profile-info">
+
+      <div class="nav-links">
+        <a href="index.html">Feature</a>
+        <a href="about.html">About</a>
+        <a href="Work.html">Work</a>
+        <a href="https://www.inprnt.com/gallery/caringwong/">Store</a>
+        <a href="contact.html">Contact</a>
+      </div>   
+
+
+      
+       <div style="height: 50px;"></div>      
+    
+
+      <div class="container">
     <div class="profile-photo">
       <img src="https://s3.bmp.ovh/imgs/2024/08/29/86156861de910cdf.jpg" alt="CaringWong">
     </div>
+        
+         <div style="height: 50px;"></div> 
+        
     <div class="profile-info">
       <h1>About CaringWong</h1>
+      
+      
       <p>
         CaringWong is an illustrator and architect from China. After living and studying in Paris for several years, where she completed her Master’s degree at l'École Nationale Supérieure d'Architecture de Paris-La Villette (ENSAPLV), she is currently based in southern China. She creates illustrations for books, music, games, and various products. She has a passion for drawing the cosmos, landscapes, skies, seas，cities and cats, as well as capturing the scenes of her daydreams.
       </p>
+      </div> 
+        </div> 
+      
 
     
-    <div style="height: 80px;"></div>
+    
+    
+    
 
+
+
+
+
+
+
+
+
+      
+      <div style="height: 150px;"></div>
+      
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Email: caringempire@gmail.com</p>
       <div class="social-links">
-        <a href="https://www.instagram.com/caringwong_art/" target="_blank" title="Instagram">
+        <a href="https://www.instagram.com/caringwong_art/" title="Instagram">
           <img src="https://s3.bmp.ovh/imgs/2024/08/29/f469638e3c7f5e53.png" alt="Instagram">
         </a>
-        <a href="https://www.deviantart.com/caringwong" target="_blank" title="DeviantArt">
+        <a href="https://www.deviantart.com/caringwong" title="DeviantArt">
           <img src="https://s3.bmp.ovh/imgs/2024/08/29/61328b608e3b8b79.png" alt="DeviantArt">
         </a>
-        <a href="https://www.inprnt.com/profile/caringwong/" target="_blank" title="INPRNT">
+        <a href="https://www.inprnt.com/profile/caringwong/" title="INPRNT">
           <img src="https://s3.bmp.ovh/imgs/2024/08/29/69c269efb745532d.png" alt="INPRNT">
         </a>
-        <a href="https://www.xiaohongshu.com/user/profile/5f79d58d000000000101e2e7?xhsshare=CopyLink&appuid=5f79d58d000000000101e2e7&apptime=1694424270" target="_blank" title="小红书">
+        <a href="https://www.xiaohongshu.com/user/profile/5f79d58d000000000101e2e7?xhsshare=CopyLink&appuid=5f79d58d000000000101e2e7&apptime=1694424270" title="小红书">
           <img src="https://s3.bmp.ovh/imgs/2024/08/29/e271f8173c21fe58.png" alt="小红书">
         </a>
-        <a href="https://caring201.zcool.com.cn/" target="_blank" title="站酷">
+        <a href="https://caring201.zcool.com.cn/" title="站酷">
           <img src="https://s3.bmp.ovh/imgs/2024/08/29/7a22206259f8f2e7.png" alt="站酷">
         </a>
       </div>
     </section>
   </div>
-  
-  </div>
-
-
-
-
-  
+    
+     <div style="height: 10px;"></div> 
   <!-- Footer -->
   <footer>
     <p>&copy; 2024 CaringWong. All rights reserved.</p>
