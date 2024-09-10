@@ -24,7 +24,7 @@
   -[StarsandSeas](starsandseas.html)
   -[Propitious](propitious.html)
 
-- [Stores](stores.html)
+- [Store](store.html)
 - [Products](products.html)
 - [Projects](projects.html)
 - [Contact](contact.html)
