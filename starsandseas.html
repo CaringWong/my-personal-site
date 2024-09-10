@@ -10,6 +10,11 @@ html, body {
       height: 100%; /* Ensure the body takes full height */
       margin: 0;
     }
+    img {
+      user-drag: none; /* 禁止拖动图片 */
+      -webkit-user-drag: none; /* Safari 支持 */
+    }
+
     body {
       font-family: Andale Mono, sans-serif;
       line-height: 1.6;
@@ -485,6 +490,13 @@ nextButton.addEventListener('click', showNextImage);
 showPage(1);
 
   </script>
+  <script>
+    // 禁用右键菜单
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>      
+       
 </body>
 </html>
 
