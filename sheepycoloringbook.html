@@ -18,6 +18,11 @@ html, body {
       display: flex;
       flex-direction: column; /* Allow flex column layout */
     }
+        /* 禁用右键点击 */
+    img {
+      user-drag: none; /* 禁止拖动图片 */
+      -webkit-user-drag: none; /* Safari 支持 */
+    }
     header {
       text-align: center;
       padding: 0px;
@@ -297,5 +302,11 @@ Client: MrSuicideSheep</p>
   <footer>
     <p>&copy; 2024 CaringWong. All rights reserved.</p>
   </footer>
+    <script>
+    // 禁用右键菜单
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
 </html>
